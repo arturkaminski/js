@@ -8,8 +8,9 @@ function titleCase(str) {
        let  wordB = wordA.substring(0,1).toUpperCase() + wordA.substring(1);
         strA[i] = wordB;
     }
-    strB = strA.join(' ');
+    let strB = strA.join(' ');
     return strB;
 }
 
 console.log(titleCase("I'm a little tea pot"));
+//console.log(titleCase(""));
