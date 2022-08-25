@@ -1,15 +1,23 @@
-//return lowest index the num can be put in array
 function getIndexToIns(arr, num) {
-    let x;
-  console.log(arr.sort());
-    for(let i in arr){
-        if(arr[i] > num){
-            x = i ;
-            break;       
-        }
-    }
-  return x;
+  arr.sort(function(a, b){
+    if(a > b)
+      return 1;
+    if(a < b)
+      return -1;
+    return 0;
+  });
+  if (arr.length == 0){
+    return 0;
+  }
+  else{
+  const isLarger = (element) => element >= num;
+    if (arr.findIndex(isLarger) == -1)
+        return arr.length;
+    else
+        return arr.findIndex(isLarge);
+  }
 }
 
-//console.log(getIndexToIns([60, 40, 80, 90], 50));
-console.log(getIndexToIns([10, 20, 30, 40, 70, 50], 35));
+
+
+console.log(getIndexToIns([10, 20, 30, 40, 70, 50], 75));
